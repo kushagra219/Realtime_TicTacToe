@@ -1,8 +1,6 @@
 # Realtime_TicTacToe
 All changes done till now have been deployed successfully. Click [here](https://realtime-tictactoe.herokuapp.com/home/) to see. 
 
-<br>
-
 ## Bugs/Enhancements Known
 * Check logic of Tic Tac Toe again for all cases
 * Display the turn of each player on screen
@@ -12,13 +10,9 @@ All changes done till now have been deployed successfully. Click [here](https://
 
 <strong> Note - Feel free to add any other issues/enhancements in the issues section) </strong>
 
-<br>
-
 ## Sample Gameplay
 
-![alt-text](https://github.com/kushagra219/Realtime_TicTacToe/blob/main/assets/sample_gif.gif)
-
-<br>
+<img src="https://github.com/kushagra219/Realtime_TicTacToe/blob/main/assets/sample_gif.gif" width="1250" height="600"/>
 
 ## Technologies Used 
 Django, Django Channels, Web Sockets, Redis, JS
