@@ -12,7 +12,7 @@ All changes done till now have been deployed successfully. Click [here](https://
 
 ## Sample Gameplay
 
-<img src="https://github.com/kushagra219/Realtime_TicTacToe/blob/main/assets/sample_gif.gif" width="1250" height="600"/>
+<img src="https://github.com/kushagra219/Realtime_TicTacToe/blob/main/assets/sample_gif.gif"/>
 
 ## Technologies Used 
 Django, Django Channels, Web Sockets, Redis, JS
