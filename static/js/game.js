@@ -5,10 +5,15 @@ var player = username.charAt(0);
 
 // console.log(player);
 
-// var base_url = 'ws://127.0.0.1:8000'
-var base_url = 'wss://realtime-tictactoe.herokuapp.com'
+if (window.location.protocol == "https:") {
+    var ws_scheme = "wss://";
+} else {
+    var ws_scheme = "ws://"
+};
 
-let socket = new WebSocket(base_url + '/ws/game/' + room_code + '/')
+console.log(ws_scheme + location.host + '/ws/game/' + room_code + '/');
+
+let socket = new WebSocket(ws_scheme + location.host + '/ws/game/' + room_code + '/')
 
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
