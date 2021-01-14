@@ -1,5 +1,6 @@
 var room_code = document.currentScript.getAttribute('room_code');
 var username = document.currentScript.getAttribute('username');
+var is_creator = document.currentScript.getAttribute('is_creator');
 var player = username.charAt(0);
 
 // console.log(player);
@@ -10,12 +11,24 @@ let gameState = ["", "", "", "", "", "", "", "", ""];
 
 let elementArray = document.querySelectorAll('.fixed')
 
+var my_turn = false;
+if (is_creator == 'True') {
+    my_turn = true;
+}
+
+console.log(is_creator + ' ' + my_turn);
+
 // console.log(elementArray.length);
 
 elementArray.forEach(function(elem) {
     elem.addEventListener("click", function(event) {
-        setText(event.path[0].getAttribute('id'), player);
+        if (my_turn == true) {
+            setText(event.path[0].getAttribute('id'), player);
+        } else {
+            alert('Its not your turn!');
+        }
     })
+
 })
 
 function redirectToHome() {
@@ -96,6 +109,7 @@ function setText(index, value) {
         socket.send(JSON.stringify({
             data
         }));
+        my_turn = false;
 
         checkWon(value, player);
 
@@ -125,6 +139,7 @@ socket.onmessage = function(e) {
         return;
     } else if (data.payload.type == 'running' && data.payload.player !== player) {
         setAnotherUserText(data.payload.index, data.payload.player);
+        my_turn = true;
     }
 
 }

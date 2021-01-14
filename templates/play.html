@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-tac-toe</title>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/play_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/play.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
 </head>
 
 <body onload="">
@@ -102,7 +104,7 @@
     </div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="{% static 'js/gameLogic.js' %}" username="{{ username }}" room_code="{{ room_code }}">
+    <script src="{% static 'js/game.js' %}" username="{{ username }}" room_code="{{ room_code }}" is_creator="{{ is_creator }}">
     </script>
 </body>
 

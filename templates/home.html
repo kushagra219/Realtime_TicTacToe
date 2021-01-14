@@ -14,10 +14,21 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <title>Tic Tac Toe</title>
 </head>
 
 <body>
+
+    {% if messages %}
+    <ul class="messages alert alert-danger text-center" role="alert" style="list-style-type: none;">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %} class="alert-link" style="font-size: x-large;">{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
     <div id="form-main">
 
         <div id="form-div">
@@ -26,13 +37,6 @@
                 <h1 style="color: white; font-family: cursive; font-weight: bold;">Play Tic Tac Toe</h1>
             </div>
 
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    {% endfor %}
-            </ul>
-            {% endif %}
 
             <form method="POST" class="form pt-4" id="form1">
 
@@ -41,7 +45,7 @@
                 </p>
 
                 <p class="option">
-                    <select class="feedback-input">
+                    <select class="feedback-input" name="option">
                     <option hidden selected>Choose Options</option>
                     <option value="have-code">Have Room Code</option>
                     <option value="create-code">Create Room Code</option>
