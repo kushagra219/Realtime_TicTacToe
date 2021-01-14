@@ -6,7 +6,7 @@ var player = username.charAt(0);
 // console.log(player);
 
 // var base_url = 'ws://127.0.0.1:8000'
-var base_url = 'ws://realtime-tictactoe.herokuapp.com'
+var base_url = 'wss://realtime-tictactoe.herokuapp.com'
 
 let socket = new WebSocket(base_url + '/ws/game/' + room_code + '/')
 
