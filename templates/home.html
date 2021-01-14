@@ -26,7 +26,15 @@
                 <h1 style="color: white; font-family: cursive; font-weight: bold;">Play Tic Tac Toe</h1>
             </div>
 
-            <form class="form pt-4" id="form1">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+            <form method="POST" class="form pt-4" id="form1">
 
                 <p class="name">
                     <input name="username" type="text" class="feedback-input" placeholder="Username" id="name" />
@@ -40,13 +48,13 @@
                     </select>
                 </p>
 
-                <p class="code">
-                    <input name="code" type="number" class="feedback-input" id="comment" placeholder="Room Code">
+                <p class="room_code">
+                    <input name="room_code" type="text" class="feedback-input" id="comment" placeholder="Room Code">
                 </p>
 
 
                 <div class="submit">
-                    <input type="submit" value="ENTER" id="button-blue" />
+                    <input type="submit" value="START GAME" id="button-blue" />
                     <div class="ease"></div>
                 </div>
             </form>

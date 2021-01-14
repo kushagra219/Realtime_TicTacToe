@@ -16,40 +16,42 @@
         <table id="table_game" style="margin-top: 25px;">
             <tr>
                 <td class="td_game">
-                    <div id="cell0" onclick="cellClicked(this.id)" class="fixed"></div>
+                    <div id="0" class="fixed"></div>
                 </td>
                 <td class="td_game">
-                    <div id="cell1" onclick="cellClicked(this.id)" class="fixed"></div>
+                    <div id="1" class="fixed"></div>
                 </td>
                 <td class="td_game">
-                    <div id="cell2" onclick="cellClicked(this.id)" class="fixed"></div>
-                </td>
-            </tr>
-            <tr>
-                <td class="td_game">
-                    <div id="cell3" onclick="cellClicked(this.id)" class="fixed"></div>
-                </td>
-                <td class="td_game">
-                    <div id="cell4" onclick="cellClicked(this.id)" class="fixed"></div>
-                </td>
-                <td class="td_game">
-                    <div id="cell5" onclick="cellClicked(this.id)" class="fixed"></div>
+                    <div id="2" class="fixed"></div>
                 </td>
             </tr>
             <tr>
                 <td class="td_game">
-                    <div id="cell6" onclick="cellClicked(this.id)" class="fixed"></div>
+                    <div id="3" class="fixed"></div>
                 </td>
                 <td class="td_game">
-                    <div id="cell7" onclick="cellClicked(this.id)" class="fixed"></div>
+                    <div id="4" class="fixed"></div>
                 </td>
                 <td class="td_game">
-                    <div id="cell8" onclick="cellClicked(this.id)" class="fixed"></div>
+                    <div id="5" class="fixed"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_game">
+                    <div id="6" class="fixed"></div>
+                </td>
+                <td class="td_game">
+                    <div id="7" class="fixed"></div>
+                </td>
+                <td class="td_game">
+                    <div id="8" class="fixed"></div>
                 </td>
             </tr>
         </table>
-        <div id="restart" title="Start new game" onclick="restartGame(true)"><span style="vertical-align:top;position:relative;top:-10px">#</span></div>
-        <table>
+        <!-- <div id="restart" title="Start new game" onclick="restartGame(true)"><span style="vertical-align:top;position:relative;top:-10px">#</span></div> -->
+
+        <!-- Score Table -->
+        <!-- <table>
             <tr>
                 <th class="th_list">Player 1</th>
                 <th class="th_list" style="padding-right:10px;padding-left:10px">Draws</th>
@@ -60,15 +62,15 @@
                 <td class="td_list" style="padding-right:10px;padding-left:10px" id="tie_score">0</td>
                 <td class="td_list" id="player_score">0</td>
             </tr>
-        </table>
+        </table> -->
         <!-- The modal dialog for announcing the winner -->
-        <div id="winAnnounce" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
+        <!-- <div id="winAnnounce" class="modal"> -->
+        <!-- Modal content -->
+        <!-- <div class="modal-content">
                 <span class="close" onclick="closeModal('winAnnounce')">&times;</span>
                 <p id="winText"></p>
             </div>
-        </div>
+        </div> -->
 
 
         <!-- The dialog for getting feedback from the user -->
@@ -99,7 +101,10 @@
 
     </div>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'js/gameLogic.js' %}" username="{{ username }}" room_code="{{ room_code }}">
+    </script>
 </body>
-<script src="{% static 'js/main.js' %}"></script>
+
 
 </html>

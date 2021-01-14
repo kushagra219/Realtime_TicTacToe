@@ -62,13 +62,24 @@ TEMPLATES = [
 
 # WSGI_APPLICATION = 'tictactoe.wsgi.application'
 ASGI_APPLICATION = 'tictactoe.asgi.application'
+
+# Redis Channel Layer
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("127.0.0.1", 6379)],
+#         },
+#     },
+# }
+
+# In Memory Channel Layer
+
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("localhost", 6379)],
-        },
-    },
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
 }
 
 # Database
