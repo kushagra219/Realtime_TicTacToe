@@ -13,7 +13,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "my_project.settings")
 django.setup()
 
 ws_urlpatterns = [
-    path('ws/game/<room_code>/', consumers.GameRoom.as_asgi())
+    path('ws/game/<room_code>', consumers.GameRoom.as_asgi())
 ]
 
 application = ProtocolTypeRouter({

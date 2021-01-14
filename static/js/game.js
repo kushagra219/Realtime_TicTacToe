@@ -5,7 +5,10 @@ var player = username.charAt(0);
 
 // console.log(player);
 
-let socket = new WebSocket('ws://127.0.0.1:8000/ws/game/' + room_code + '/')
+// var base_url = 'ws://127.0.0.1:8000'
+var base_url = 'ws://realtime-tictactoe.herokuapp.com'
+
+let socket = new WebSocket(base_url + '/ws/game/' + room_code + '/')
 
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
@@ -16,7 +19,7 @@ if (is_creator == 'True') {
     my_turn = true;
 }
 
-console.log(is_creator + ' ' + my_turn);
+// console.log(is_creator + ' ' + my_turn);
 
 // console.log(elementArray.length);
 
@@ -34,6 +37,7 @@ elementArray.forEach(function(elem) {
 function redirectToHome() {
     setTimeout(function() {
         window.location = "http://127.0.0.1:8000/home/";
+
     }, 3000);
 }
 
